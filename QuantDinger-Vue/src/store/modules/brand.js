@@ -7,9 +7,9 @@ import { getBrandConfig } from '@/api/brand'
  * yet (or fails entirely).
  */
 const DEFAULT_BRAND = {
-  app_name: 'QuantDinger',
+  app_name: 'TradeLens',
   app_version: '3.0.17',
-  copyright: '© 2025-2026 QuantDinger. All rights reserved.',
+  copyright: '© 2025-2026 TradeLens. All rights reserved.',
   logos: {
     light: '',
     dark: '',
@@ -17,18 +17,12 @@ const DEFAULT_BRAND = {
     favicon: ''
   },
   contact: {
-    email: 'support@quantdinger.com',
-    support_url: 'https://t.me/quantdinger',
-    feature_request_url: 'https://github.com/brokermr810/QuantDinger/issues',
-    live_chat_url: 'https://t.me/quantdinger'
+    email: 'support@tradelens.com',
+    support_url: '',
+    feature_request_url: '',
+    live_chat_url: ''
   },
-  social_accounts: [
-    { name: 'GitHub', icon: 'github', url: 'https://github.com/brokermr810/QuantDinger' },
-    { name: 'X', icon: 'x', url: 'https://x.com/quantdinger_en' },
-    { name: 'Discord', icon: 'discord', url: 'https://discord.com/invite/tyx5B6TChr' },
-    { name: 'Telegram', icon: 'telegram', url: 'https://t.me/quantdinger' },
-    { name: 'YouTube', icon: 'youtube', url: 'https://youtube.com/@quantdinger' }
-  ],
+  social_accounts: [],
   legal: {
     user_agreement_url: '',
     user_agreement_text: '',
@@ -41,7 +35,7 @@ const DEFAULT_BRAND = {
   }
 }
 
-const STORAGE_KEY = 'quantdinger.brand-config.v1'
+const STORAGE_KEY = 'tradelens.brand-config.v1'
 
 function readCachedBrand () {
   try {

@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
   const enableMock = env.VITE_ENABLE_MOCK === 'true'
 
   return {
-    base: './',
+    base: '/',
     resolve: {
       alias: [
         // webpack 风格的 ~package/... less @import → 直接命中 node_modules

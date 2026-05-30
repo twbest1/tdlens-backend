@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://camo.githubusercontent.com/0f7d83a11ee48d716ccc895fc90dd7ea9ff3f77a9ea1132d417d95bba2306573/68747470733a2f2f61692e7175616e7464696e6765722e636f6d2f696d672f6c6f676f2e65306635313061382e706e67" alt="QuantDinger" width="120" />
+  <img src="https://camo.githubusercontent.com/0f7d83a11ee48d716ccc895fc90dd7ea9ff3f77a9ea1132d417d95bba2306573/68747470733a2f2f61692e7175616e7464696e6765722e636f6d2f696d672f6c6f676f2e65306635313061382e706e67" alt="TradeLens" width="120" />
 </div>
 
-<h1 align="center">QuantDinger Frontend</h1>
+<h1 align="center">TradeLens Frontend</h1>
 
 <p align="center">
-  <strong>Vue.js frontend source for QuantDinger</strong><br/>
+  <strong>Vue.js frontend source for TradeLens</strong><br/>
   <strong>AI-native quant research, strategy, trading, and operations workspace</strong>
 </p>
 
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/brokermr810/QuantDinger"><img src="https://img.shields.io/badge/Main_Repo-QuantDinger-blue?logo=github" alt="Main Repo" /></a>
+  <a href="https://github.com/brokermr810/TradeLens"><img src="https://img.shields.io/badge/Main_Repo-TradeLens-blue?logo=github" alt="Main Repo" /></a>
   <img src="https://img.shields.io/badge/Vue-2.x-4FC08D?logo=vue.js" alt="Vue 2" />
   <img src="https://img.shields.io/badge/UI-Ant_Design_Vue-1890ff?logo=ant-design" alt="Ant Design Vue" />
   <img src="https://img.shields.io/badge/Charts-KLineCharts%20%2B%20ECharts-ff6600" alt="Charts" />
@@ -24,8 +24,8 @@
 </p>
 
 <p align="center">
-  <a href="https://ai.quantdinger.com">Live Demo</a> ·
-  <a href="https://github.com/brokermr810/QuantDinger">Main Repository</a> ·
+  <a href="https://ai.tradelens.com">Live Demo</a> ·
+  <a href="https://github.com/brokermr810/TradeLens">Main Repository</a> ·
   <a href="https://t.me/worldinbroker">Telegram</a> ·
   <a href="#license">License</a>
 </p>
@@ -34,11 +34,11 @@
 
 ## Overview
 
-This repository contains the Vue.js frontend source code for QuantDinger. It is the web application layer that connects traders, researchers, and operators to the QuantDinger backend for AI analysis, charting, strategy development, backtesting, execution, billing, and user management.
+This repository contains the Vue.js frontend source code for TradeLens. It is the web application layer that connects traders, researchers, and operators to the TradeLens backend for AI analysis, charting, strategy development, backtesting, execution, billing, and user management.
 
 If you are looking for one-click deployment, Docker Compose, backend APIs, or the full product documentation, start with the main repository:
 
-- [QuantDinger main repository](https://github.com/brokermr810/QuantDinger)
+- [TradeLens main repository](https://github.com/brokermr810/TradeLens)
 
 ## What This Frontend Delivers
 
@@ -86,7 +86,7 @@ If you are looking for one-click deployment, Docker Compose, backend APIs, or th
 | Node.js | **18 LTS** recommended (16.13+ minimum for [corepack](https://nodejs.org/api/corepack.html)) |
 | pnpm | **10.x** — version pinned in `package.json` (`packageManager`); installed via `corepack enable` |
 | Git | Required — production builds embed commit metadata via `git-revision-webpack-plugin` |
-| Backend | QuantDinger API reachable at `http://localhost:5000` (see below) |
+| Backend | TradeLens API reachable at `http://localhost:5000` (see below) |
 
 Use **`pnpm install`** with the committed **`pnpm-lock.yaml`**. Do not commit `package-lock.json`; npm installs can resolve a different dependency tree than CI/Docker.
 
@@ -95,20 +95,20 @@ Use **`pnpm install`** with the committed **`pnpm-lock.yaml`**. Do not commit `p
 Clone with Git (a plain source ZIP without `.git` may break `pnpm build`):
 
 ```bash
-git clone https://github.com/brokermr810/QuantDinger-Vue.git
-cd QuantDinger-Vue
+git clone https://github.com/brokermr810/TradeLens-Vue.git
+cd TradeLens-Vue
 corepack enable
 pnpm install
 pnpm run serve
 ```
 
-If you work from a copy inside the main QuantDinger tree (e.g. `QuantDinger-Vue-src/`), run the same commands in that directory instead.
+If you work from a copy inside the main TradeLens tree (e.g. `TradeLens-Vue-src/`), run the same commands in that directory instead.
 
 ### Start the backend first
 
 Before `pnpm run serve`, ensure the backend answers on port **5000**. Common options:
 
-- [QuantDinger main repository](https://github.com/brokermr810/QuantDinger): `docker compose up -d` (full stack) or backend-related services only
+- [TradeLens main repository](https://github.com/brokermr810/TradeLens): `docker compose up -d` (full stack) or backend-related services only
 - Local Python API per `backend_api_python/README.md` in the main repo
 
 ### Where to open the UI
@@ -121,7 +121,7 @@ Before `pnpm run serve`, ensure the backend answers on port **5000**. Common opt
 Default login follows backend configuration. In the default Docker experience it is commonly:
 
 ```text
-quantdinger / 123456
+tradelens / 123456
 ```
 
 ### API Proxy
@@ -137,9 +137,9 @@ If your backend runs elsewhere, update the proxy target accordingly.
 
 ### Option A: Use the Main Repository
 
-For most users, the recommended path is to use the main QuantDinger repository, which includes Docker Compose, backend services, Nginx delivery, and deployment documentation:
+For most users, the recommended path is to use the main TradeLens repository, which includes Docker Compose, backend services, Nginx delivery, and deployment documentation:
 
-- [QuantDinger main repository](https://github.com/brokermr810/QuantDinger)
+- [TradeLens main repository](https://github.com/brokermr810/TradeLens)
 
 ### Option B: Frontend Source Development
 
@@ -158,12 +158,12 @@ pnpm run build
 
 Build output is generated in `dist/`. You can serve it with Nginx or another static file server.
 
-### Ship into the main QuantDinger repository
+### Ship into the main TradeLens repository
 
 When developing next to the backend checkout, sync `dist/` into the main repo’s prebuilt path and restart or rebuild the frontend container:
 
 ```bash
-# Bash — run from QuantDinger-Vue-src/ (or QuantDinger-Vue/)
+# Bash — run from TradeLens-Vue-src/ (or TradeLens-Vue/)
 pnpm run build
 rm -rf ../frontend/dist/*
 cp -r dist/* ../frontend/dist/
@@ -183,13 +183,13 @@ For a production-ready integrated deployment without manual copies, prefer the m
 This tree includes a multi-stage `Dockerfile` (Node builder + nginx) aligned with CI:
 
 ```bash
-docker build -t quantdinger-frontend:local .
-docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 quantdinger-frontend:local
+docker build -t tradelens-frontend:local .
+docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 tradelens-frontend:local
 ```
 
 - **`BACKEND_URL`** — upstream API base used by nginx (`/api/` proxy). Default in the image: `http://backend:5000` (Docker Compose service name).
-- Official multi-arch images: `ghcr.io/brokermr810/quantdinger-frontend:<tag>` (see [QuantDinger `docker-compose.ghcr.yml`](https://github.com/brokermr810/QuantDinger/blob/main/docker-compose.ghcr.yml)).
-- Tagged releases on [QuantDinger-Vue](https://github.com/brokermr810/QuantDinger-Vue/releases) may attach **`dist.tar.gz`** for static hosting without Docker.
+- Official multi-arch images: `ghcr.io/brokermr810/tradelens-frontend:<tag>` (see [TradeLens `docker-compose.ghcr.yml`](https://github.com/brokermr810/TradeLens/blob/main/docker-compose.ghcr.yml)).
+- Tagged releases on [TradeLens-Vue](https://github.com/brokermr810/TradeLens-Vue/releases) may attach **`dist.tar.gz`** for static hosting without Docker.
 
 ## Functional Areas
 
@@ -224,7 +224,7 @@ docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 quant
 ## Project Structure
 
 ```text
-QuantDinger-Vue/
+TradeLens-Vue/
 ├── public/                    # Static assets and HTML shell
 ├── deploy/                    # nginx templates for Docker / production proxy
 ├── src/
@@ -262,7 +262,7 @@ QuantDinger-Vue/
 
 ## Internationalization
 
-QuantDinger frontend currently supports 10 languages through `src/locales/lang/`:
+TradeLens frontend currently supports 10 languages through `src/locales/lang/`:
 
 | Language | File | Language | File |
 |----------|------|----------|------|
@@ -278,8 +278,8 @@ To add another language, create a matching file and register it in `src/locales/
 
 This repository focuses on frontend source development. For visual product tours and full product-level documentation, see:
 
-- [Main README](https://github.com/brokermr810/QuantDinger)
-- [Main repo docs](https://github.com/brokermr810/QuantDinger/tree/main/docs)
+- [Main README](https://github.com/brokermr810/TradeLens)
+- [Main repo docs](https://github.com/brokermr810/TradeLens/tree/main/docs)
 
 ## Contributing
 
@@ -295,25 +295,25 @@ Recommended workflow:
 
 Please also review the main repository contribution guidance:
 
-- [Contributing Guide](https://github.com/brokermr810/QuantDinger/blob/main/CONTRIBUTING.md)
+- [Contributing Guide](https://github.com/brokermr810/TradeLens/blob/main/CONTRIBUTING.md)
 
 ## Community and Support
 
 | Channel | Link |
 |---------|------|
 | Telegram | [t.me/worldinbroker](https://t.me/worldinbroker) |
-| GitHub Issues | [Report bugs / Request features](https://github.com/brokermr810/QuantDinger/issues) |
+| GitHub Issues | [Report bugs / Request features](https://github.com/brokermr810/TradeLens/issues) |
 | Email | [brokermr810@gmail.com](mailto:brokermr810@gmail.com) |
 
 ## License
 
-This repository is released under the **QuantDinger Frontend Source-Available License v1.0**. See [`LICENSE`](./LICENSE) for the full license text.
+This repository is released under the **TradeLens Frontend Source-Available License v1.0**. See [`LICENSE`](./LICENSE) for the full license text.
 
 Summary of the license position:
 
 - Non-Commercial Use is permitted free of charge.
 - Qualified Non-Profit Entity use is permitted free of charge within the scope defined by the license.
-- Commercial Use requires a separate commercial license from QuantDinger.
+- Commercial Use requires a separate commercial license from TradeLens.
 - Branding, trademarks, attribution, and watermark notices may not be removed, altered, or misrepresented without prior written permission.
 
 | Use Category | Cost | Scope |
@@ -324,17 +324,17 @@ Summary of the license position:
 
 For commercial licensing:
 
-- Website: [quantdinger.com](https://quantdinger.com)
+- Website: [tradelens.com](https://tradelens.com)
 - Telegram: [t.me/worldinbroker](https://t.me/worldinbroker)
 - Email: [brokermr810@gmail.com](mailto:brokermr810@gmail.com)
 
 ## Legal Notice and Compliance
 
-- This frontend, and any related QuantDinger software or derivative work, may be used only for lawful purposes.
+- This frontend, and any related TradeLens software or derivative work, may be used only for lawful purposes.
 - No individual or organization may use the software for any unlawful, fraudulent, abusive, deceptive, market-manipulative, sanctions-violating, money-laundering, or otherwise prohibited activity.
-- Any commercial deployment, operation, redistribution, resale, or service offering based on QuantDinger must comply with the laws, regulations, licensing requirements, sanctions rules, tax rules, data-protection rules, and market or platform rules applicable in the country or region where it is used.
+- Any commercial deployment, operation, redistribution, resale, or service offering based on TradeLens must comply with the laws, regulations, licensing requirements, sanctions rules, tax rules, data-protection rules, and market or platform rules applicable in the country or region where it is used.
 - Users are solely responsible for determining whether their use is lawful in their jurisdiction and for obtaining any approvals, registrations, disclosures, or professional advice required by applicable law.
-- QuantDinger, its copyright holders, contributors, licensors, maintainers, and related open-source participants do not provide legal, tax, investment, compliance, or regulatory advice.
+- TradeLens, its copyright holders, contributors, licensors, maintainers, and related open-source participants do not provide legal, tax, investment, compliance, or regulatory advice.
 - To the maximum extent permitted by applicable law, all such parties disclaim responsibility and liability for any unlawful use, regulatory breach, trading loss, service interruption, enforcement action, or other consequence arising from the use or misuse of the software.
 
 ## Acknowledgements
@@ -351,5 +351,5 @@ This frontend builds on a strong open-source ecosystem:
 - [ant-design-vue-pro](https://github.com/vueComponent/ant-design-vue-pro)
 
 <p align="center">
-  If QuantDinger helps you, consider giving it a star.
+  If TradeLens helps you, consider giving it a star.
 </p>

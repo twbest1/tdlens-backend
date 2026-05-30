@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://camo.githubusercontent.com/0f7d83a11ee48d716ccc895fc90dd7ea9ff3f77a9ea1132d417d95bba2306573/68747470733a2f2f61692e7175616e7464696e6765722e636f6d2f696d672f6c6f676f2e65306635313061382e706e67" alt="QuantDinger" width="120" />
+  <img src="https://camo.githubusercontent.com/0f7d83a11ee48d716ccc895fc90dd7ea9ff3f77a9ea1132d417d95bba2306573/68747470733a2f2f61692e7175616e7464696e6765722e636f6d2f696d672f6c6f676f2e65306635313061382e706e67" alt="TradeLens" width="120" />
 </div>
 
-<h1 align="center">QuantDinger Frontend</h1>
+<h1 align="center">TradeLens Frontend</h1>
 
 <p align="center">
-  <strong>QuantDinger Vue.js 前端源码</strong><br/>
+  <strong>TradeLens Vue.js 前端源码</strong><br/>
   <strong>AI 原生量化研究、策略、交易与运营工作台的 Web 界面层</strong>
 </p>
 
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/brokermr810/QuantDinger"><img src="https://img.shields.io/badge/Main_Repo-QuantDinger-blue?logo=github" alt="Main Repo" /></a>
+  <a href="https://github.com/brokermr810/TradeLens"><img src="https://img.shields.io/badge/Main_Repo-TradeLens-blue?logo=github" alt="Main Repo" /></a>
   <img src="https://img.shields.io/badge/Vue-2.x-4FC08D?logo=vue.js" alt="Vue 2" />
   <img src="https://img.shields.io/badge/UI-Ant_Design_Vue-1890ff?logo=ant-design" alt="Ant Design Vue" />
   <img src="https://img.shields.io/badge/Charts-KLineCharts%20%2B%20ECharts-ff6600" alt="Charts" />
@@ -24,8 +24,8 @@
 </p>
 
 <p align="center">
-  <a href="https://ai.quantdinger.com">在线演示</a> ·
-  <a href="https://github.com/brokermr810/QuantDinger">主仓库</a> ·
+  <a href="https://ai.tradelens.com">在线演示</a> ·
+  <a href="https://github.com/brokermr810/TradeLens">主仓库</a> ·
   <a href="https://t.me/worldinbroker">Telegram</a> ·
   <a href="#license">许可证</a>
 </p>
@@ -34,11 +34,11 @@
 
 ## 概览
 
-本仓库是 QuantDinger 的 Vue.js 前端源码仓库，承载产品的 Web 界面层，负责连接后端能力与用户交互，包括 AI 分析、图表研究、策略开发、回测、交易执行、计费和用户管理等前端工作流。
+本仓库是 TradeLens 的 Vue.js 前端源码仓库，承载产品的 Web 界面层，负责连接后端能力与用户交互，包括 AI 分析、图表研究、策略开发、回测、交易执行、计费和用户管理等前端工作流。
 
 如果你要查找 Docker Compose 一键部署、后端 API、完整产品说明或正式部署文档，请优先查看主仓库：
 
-- [QuantDinger 主仓库](https://github.com/brokermr810/QuantDinger)
+- [TradeLens 主仓库](https://github.com/brokermr810/TradeLens)
 
 ## 这个前端仓库提供什么
 
@@ -86,7 +86,7 @@
 | Node.js | 建议 **18 LTS**（最低 16.13+，需支持 [corepack](https://nodejs.org/api/corepack.html)） |
 | pnpm | **10.x** — 版本由 `package.json` 的 `packageManager` 锁定；通过 `corepack enable` 安装 |
 | Git | 必需 — 生产构建会通过 `git-revision-webpack-plugin` 写入提交信息 |
-| Backend | QuantDinger 后端可访问，默认 `http://localhost:5000`（见下文） |
+| Backend | TradeLens 后端可访问，默认 `http://localhost:5000`（见下文） |
 
 请使用 **`pnpm install`** 并保留仓库中的 **`pnpm-lock.yaml`**。不要提交 `package-lock.json`；仅用 npm 安装可能与 CI/Docker 解析出不同的依赖树。
 
@@ -95,20 +95,20 @@
 请使用 **Git 克隆**（无 `.git` 的源码 ZIP 可能导致 `pnpm build` 失败）：
 
 ```bash
-git clone https://github.com/brokermr810/QuantDinger-Vue.git
-cd QuantDinger-Vue
+git clone https://github.com/brokermr810/TradeLens-Vue.git
+cd TradeLens-Vue
 corepack enable
 pnpm install
 pnpm run serve
 ```
 
-若在主仓库目录内开发（例如 `QuantDinger-Vue-src/`），在该目录下执行相同命令即可。
+若在主仓库目录内开发（例如 `TradeLens-Vue-src/`），在该目录下执行相同命令即可。
 
 ### 先启动后端
 
 执行 `pnpm run serve` 前，请确保后端在 **5000** 端口可访问。常见方式：
 
-- [QuantDinger 主仓库](https://github.com/brokermr810/QuantDinger)：`docker compose up -d`（整栈）或仅启动后端相关服务
+- [TradeLens 主仓库](https://github.com/brokermr810/TradeLens)：`docker compose up -d`（整栈）或仅启动后端相关服务
 - 按主仓库 `backend_api_python/README.md` 本地运行 Python API
 
 ### 访问地址
@@ -121,7 +121,7 @@ pnpm run serve
 默认登录信息取决于后端配置。在默认 Docker 体验中，常见为：
 
 ```text
-quantdinger / 123456
+tradelens / 123456
 ```
 
 ### API 代理
@@ -137,7 +137,7 @@ quantdinger / 123456
 
 ### 方式 A：使用主仓库
 
-对于大多数用户，推荐直接使用 QuantDinger 主仓库。主仓库已经提供：
+对于大多数用户，推荐直接使用 TradeLens 主仓库。主仓库已经提供：
 
 - Docker Compose 一键部署
 - 后端服务与数据库
@@ -146,7 +146,7 @@ quantdinger / 123456
 
 入口：
 
-- [QuantDinger 主仓库](https://github.com/brokermr810/QuantDinger)
+- [TradeLens 主仓库](https://github.com/brokermr810/TradeLens)
 
 ### 方式 B：前端源码开发
 
@@ -165,12 +165,12 @@ pnpm run build
 
 构建产物输出到 `dist/`，可由 Nginx 或其他静态文件服务托管。
 
-### 同步到 QuantDinger 主仓库
+### 同步到 TradeLens 主仓库
 
 与后端同仓开发时，将 `dist/` 覆盖到主仓库预构建目录，并重启或重建前端容器：
 
 ```bash
-# Bash — 在 QuantDinger-Vue-src/（或 QuantDinger-Vue/）下执行
+# Bash — 在 TradeLens-Vue-src/（或 TradeLens-Vue/）下执行
 pnpm run build
 rm -rf ../frontend/dist/*
 cp -r dist/* ../frontend/dist/
@@ -190,13 +190,13 @@ Copy-Item -Path dist\* -Destination ..\frontend\dist\ -Recurse -Force
 本目录提供与 CI 一致的多阶段 `Dockerfile`（Node 构建 + nginx）：
 
 ```bash
-docker build -t quantdinger-frontend:local .
-docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 quantdinger-frontend:local
+docker build -t tradelens-frontend:local .
+docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 tradelens-frontend:local
 ```
 
 - **`BACKEND_URL`** — nginx 转发 `/api/` 时使用的后端地址。镜像默认：`http://backend:5000`（Compose 服务名）。
-- 官方多架构镜像：`ghcr.io/brokermr810/quantdinger-frontend:<tag>`（见主仓库 [`docker-compose.ghcr.yml`](https://github.com/brokermr810/QuantDinger/blob/main/docker-compose.ghcr.yml)）。
-- [QuantDinger-Vue Releases](https://github.com/brokermr810/QuantDinger-Vue/releases) 在发版时可能附带 **`dist.tar.gz`**，便于无 Docker 的静态部署。
+- 官方多架构镜像：`ghcr.io/brokermr810/tradelens-frontend:<tag>`（见主仓库 [`docker-compose.ghcr.yml`](https://github.com/brokermr810/TradeLens/blob/main/docker-compose.ghcr.yml)）。
+- [TradeLens-Vue Releases](https://github.com/brokermr810/TradeLens-Vue/releases) 在发版时可能附带 **`dist.tar.gz`**，便于无 Docker 的静态部署。
 
 ## 功能模块分布
 
@@ -231,7 +231,7 @@ docker run --rm -p 8080:80 -e BACKEND_URL=http://host.docker.internal:5000 quant
 ## 项目结构
 
 ```text
-QuantDinger-Vue/
+TradeLens-Vue/
 ├── public/                    # 静态资源与 HTML 壳
 ├── deploy/                    # Docker / 生产环境 nginx 模板
 ├── src/
@@ -285,8 +285,8 @@ QuantDinger-Vue/
 
 本仓库聚焦前端源码开发。若需查看完整产品截图、视觉导览和正式文档，请参考：
 
-- [主仓库 README](https://github.com/brokermr810/QuantDinger)
-- [主仓库 docs](https://github.com/brokermr810/QuantDinger/tree/main/docs)
+- [主仓库 README](https://github.com/brokermr810/TradeLens)
+- [主仓库 docs](https://github.com/brokermr810/TradeLens/tree/main/docs)
 
 ## 贡献
 
@@ -302,25 +302,25 @@ QuantDinger-Vue/
 
 也建议同时参考主仓库的贡献说明：
 
-- [Contributing Guide](https://github.com/brokermr810/QuantDinger/blob/main/CONTRIBUTING.md)
+- [Contributing Guide](https://github.com/brokermr810/TradeLens/blob/main/CONTRIBUTING.md)
 
 ## 社区与支持
 
 | 渠道 | 链接 |
 |------|------|
 | Telegram | [t.me/worldinbroker](https://t.me/worldinbroker) |
-| GitHub Issues | [问题反馈 / 功能建议](https://github.com/brokermr810/QuantDinger/issues) |
+| GitHub Issues | [问题反馈 / 功能建议](https://github.com/brokermr810/TradeLens/issues) |
 | Email | [brokermr810@gmail.com](mailto:brokermr810@gmail.com) |
 
 ## License
 
-本仓库采用 **QuantDinger Frontend Source-Available License v1.0**。完整条款见 [`LICENSE`](./LICENSE)。
+本仓库采用 **TradeLens Frontend Source-Available License v1.0**。完整条款见 [`LICENSE`](./LICENSE)。
 
 许可证摘要如下：
 
 - 非商业用途可免费使用。
 - 符合条件的非营利机构用途可在许可证定义范围内免费使用。
-- 商业用途必须另行获得 QuantDinger 的商业授权。
+- 商业用途必须另行获得 TradeLens 的商业授权。
 - 品牌、商标、署名与水印相关内容，未经事先书面许可，不得移除、修改或误导性展示。
 
 | 使用类型 | 成本 | 范围 |
@@ -331,17 +331,17 @@ QuantDinger-Vue/
 
 商业授权联系：
 
-- Website: [quantdinger.com](https://quantdinger.com)
+- Website: [tradelens.com](https://tradelens.com)
 - Telegram: [t.me/worldinbroker](https://t.me/worldinbroker)
 - Email: [brokermr810@gmail.com](mailto:brokermr810@gmail.com)
 
 ## 法律声明与合规提示
 
-- 本前端及相关 QuantDinger 软件、衍生版本仅可用于合法用途。
+- 本前端及相关 TradeLens 软件、衍生版本仅可用于合法用途。
 - 任何个人或组织不得将本软件用于任何违法、欺诈、滥用、误导、市场操纵、违反制裁、洗钱或其他被法律法规禁止的活动。
-- 任何基于 QuantDinger 的商业部署、运营、再分发、转售或服务化提供，均必须遵守使用地所属国家或地区适用的法律法规、许可要求、制裁规则、税务规则、数据保护规则以及相关市场或平台规则。
+- 任何基于 TradeLens 的商业部署、运营、再分发、转售或服务化提供，均必须遵守使用地所属国家或地区适用的法律法规、许可要求、制裁规则、税务规则、数据保护规则以及相关市场或平台规则。
 - 用户应自行判断其使用行为在所属司法辖区是否合法，并自行承担取得审批、备案、披露、牌照或专业法律/税务/合规意见的责任。
-- QuantDinger 及其版权方、贡献者、许可方、维护者和相关开源参与方，不提供任何法律、税务、投资、合规或监管意见。
+- TradeLens 及其版权方、贡献者、许可方、维护者和相关开源参与方，不提供任何法律、税务、投资、合规或监管意见。
 - 在适用法律允许的最大范围内，上述各方对任何因使用或误用本软件而导致的违法使用、监管违规、交易损失、服务中断、执法措施或其他后果，不承担责任。
 
 ## 致谢
@@ -358,5 +358,5 @@ QuantDinger-Vue/
 - [ant-design-vue-pro](https://github.com/vueComponent/ant-design-vue-pro)
 
 <p align="center">
-  如果 QuantDinger 对你有帮助，欢迎给项目点一个 Star。
+  如果 TradeLens 对你有帮助，欢迎给项目点一个 Star。
 </p>

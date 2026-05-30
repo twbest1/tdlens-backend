@@ -332,8 +332,8 @@
                   <p>{{ $t('settings.commercialLicense.body') }}</p>
                   <p class="license-contact">
                     <span class="contact-label">{{ $t('settings.commercialLicense.contactLabel') }}:</span>
-                    <a href="mailto:support@quantdinger.com" class="contact-link">
-                      <a-icon type="mail" /> support@quantdinger.com
+                    <a href="mailto:support@tradelens.com" class="contact-link">
+                      <a-icon type="mail" /> support@tradelens.com
                     </a>
                   </p>
                 </div>

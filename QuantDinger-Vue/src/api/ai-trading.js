@@ -1,15 +1,15 @@
 import request from '@/utils/request'
 
 const api = {
-  strategies: '/addons/quantdinger/strategy/strategies',
-  createAIStrategy: '/addons/quantdinger/strategy/aiCreate',
-  updateAIStrategy: '/addons/quantdinger/strategy/aiUpdate',
-  deleteStrategy: '/addons/quantdinger/strategy/delete',
-  startStrategy: '/addons/quantdinger/strategy/start',
-  stopStrategy: '/addons/quantdinger/strategy/stop',
-  testConnection: '/addons/quantdinger/strategy/testConnection',
-  aiDecisions: '/addons/quantdinger/strategy/aiDecisions',
-  getCryptoSymbols: '/addons/quantdinger/strategy/getCryptoSymbols'
+  strategies: '/addons/tradelens/strategy/strategies',
+  createAIStrategy: '/addons/tradelens/strategy/aiCreate',
+  updateAIStrategy: '/addons/tradelens/strategy/aiUpdate',
+  deleteStrategy: '/addons/tradelens/strategy/delete',
+  startStrategy: '/addons/tradelens/strategy/start',
+  stopStrategy: '/addons/tradelens/strategy/stop',
+  testConnection: '/addons/tradelens/strategy/testConnection',
+  aiDecisions: '/addons/tradelens/strategy/aiDecisions',
+  getCryptoSymbols: '/addons/tradelens/strategy/getCryptoSymbols'
 }
 
 /**

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="/slogo.png">
-    <title>QuantDinger</title>
+    <title>TradeLens</title>
     <style>
       .first-loading-wrp {
         display: flex;
@@ -14,11 +14,11 @@
         flex-direction: column;
         min-height: 420px;
         height: 100vh;
-        background: #fff;
+        background: #020617;
         position: relative;
         overflow: hidden;
       }
-      .first-loading-wrp > h2 { font-size: 32px; margin-bottom: 40px; color: #333; font-weight: 600; }
+      .first-loading-wrp > h2 { font-size: 32px; margin-bottom: 40px; color: rgba(255,255,255,0.9); font-weight: 600; }
       .first-loading-wrp .loading-wrp { padding: 40px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: relative; width: 100%; max-width: 600px; }
       .pixel-cat-container { position: relative; width: 100%; height: 120px; margin: 0 auto 30px; overflow: hidden; }
       .pixel-cat { position: absolute; left: 0; bottom: 24px; width: 32px; height: 32px; animation: catRun 0.4s steps(2) infinite, catMove 3.5s linear infinite; image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
@@ -48,7 +48,7 @@
       @keyframes headBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1px); } }
       .ground { position: absolute; bottom: 0; left: 0; right: 0; height: 12px; background: repeating-linear-gradient(90deg, #222 0px, #222 6px, #555 6px, #555 12px); animation: groundMove 0.3s linear infinite; image-rendering: pixelated; }
       @keyframes groundMove { 0% { background-position: 0 0; } 100% { background-position: 12px 0; } }
-      .brand-text { display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: 600; color: #333; margin-top: 20px; letter-spacing: 2px; }
+      .brand-text { display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: 600; color: rgba(255,255,255,0.9); margin-top: 20px; letter-spacing: 2px; }
       @media (prefers-color-scheme: dark) {
         .first-loading-wrp { background: #141414; }
         .first-loading-wrp > h2 { color: #fff; }
@@ -69,7 +69,7 @@
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but QuantDinger doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but TradeLens doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
       <div class="first-loading-wrp">
@@ -95,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="brand-text">QuantDinger</div>
+        <div class="brand-text">TradeLens</div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>

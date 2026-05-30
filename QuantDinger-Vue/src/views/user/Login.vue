@@ -1188,14 +1188,14 @@ export default {
               this.$router.push({ path: '/' }).then(() => {
                 this.$notification.success({
                   message: 'Welcome',
-                  description: `${timeFix()}, welcome to QuantDinger!`
+                  description: `${timeFix()}, welcome to TradeLens!`
                 })
               }).catch(err => {
                 console.error('Router push error:', err)
                 // 即使跳转失败，也显示成功消息
                 this.$notification.success({
                   message: 'Welcome',
-                  description: `${timeFix()}, welcome to QuantDinger!`
+                  description: `${timeFix()}, welcome to TradeLens!`
                 })
               })
             } else {
@@ -1354,32 +1354,80 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@accent-blue: #38bdf8;
+@accent-green: #22c55e;
+@accent-red: #ef4444;
+@glass-border: rgba(56, 189, 248, 0.1);
+@glass-border-hover: rgba(56, 189, 248, 0.25);
+@text-primary: rgba(255, 255, 255, 0.92);
+@text-secondary: rgba(255, 255, 255, 0.5);
+@text-muted: rgba(255, 255, 255, 0.3);
+@danger: #f87171;
+@success: #4ade80;
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  padding: 40px 0;
+  padding: 16px 0;
 
   .auth-intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 
     .desc {
-      margin-top: 12px;
-      color: rgba(0, 0, 0, 0.45);
-      font-size: 14px;
+      margin-top: 6px;
+      color: @text-secondary;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
   }
 
   .auth-card {
+    position: relative;
     min-width: 360px;
     width: 420px;
-    background: #fff;
-    padding: 32px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 92vw;
+    background: linear-gradient(160deg, rgba(15, 30, 60, 0.55), rgba(10, 15, 35, 0.65));
+    padding: 36px 32px;
+    border-radius: 14px;
+    border: 1px solid @glass-border;
+    backdrop-filter: blur(24px) saturate(1.1);
+    box-shadow:
+      0 0 0 1px rgba(56, 189, 248, 0.04),
+      0 24px 64px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: all 0.4s ease;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(@accent-blue, 0.4), rgba(@accent-green, 0.3), transparent);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      border-color: @glass-border-hover;
+      box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.08),
+        0 32px 80px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(56, 189, 248, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+      &::before {
+        left: 5%;
+        right: 5%;
+        background: linear-gradient(90deg, transparent, rgba(@accent-blue, 0.5), rgba(@accent-green, 0.4), transparent);
+      }
+    }
   }
 
   .oauth-processing {
@@ -1388,15 +1436,37 @@ export default {
 
     p {
       margin-top: 16px;
-      color: rgba(0, 0, 0, 0.45);
+      color: @text-secondary;
     }
   }
 
   .auth-form {
     .submit-button {
       padding: 0 15px;
-      font-size: 16px;
-      height: 40px;
+      font-size: 14px;
+      height: 46px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(135deg, @accent-blue 0%, @accent-green 100%);
+      box-shadow:
+        0 4px 16px rgba(34, 197, 94, 0.25),
+        0 0 30px rgba(56, 189, 248, 0.08);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow:
+          0 6px 24px rgba(34, 197, 94, 0.35),
+          0 0 40px rgba(56, 189, 248, 0.12);
+        background: linear-gradient(135deg, lighten(@accent-blue, 6%) 0%, lighten(@accent-green, 6%) 100%);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -1407,26 +1477,27 @@ export default {
     margin-bottom: 24px;
 
     a {
-      color: rgba(0, 0, 0, 0.45);
+      color: @text-secondary;
       font-size: 14px;
       cursor: pointer;
-      padding: 4px 0;
+      padding: 6px 0;
       border-bottom: 2px solid transparent;
-      transition: all 0.3s;
+      transition: all 0.25s;
 
       &:hover {
-        color: #1890ff;
+        color: @text-primary;
       }
 
       &.active {
-        color: #1890ff;
-        border-bottom-color: #1890ff;
+        color: @accent-blue;
+        border-bottom-color: @accent-blue;
         font-weight: 500;
       }
     }
 
     .ant-divider {
       margin: 0 16px;
+      background: rgba(56, 189, 248, 0.12);
     }
   }
 
@@ -1435,36 +1506,38 @@ export default {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin-top: 16px;
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.45);
+    margin-top: 14px;
+    font-size: 12px;
+    color: @text-muted;
 
     .anticon {
-      color: #1890ff;
+      color: @accent-green;
     }
   }
 
   .auth-links {
     text-align: center;
-    margin-top: 16px;
-    font-size: 14px;
+    margin-top: 14px;
+    font-size: 13px;
 
     a {
-      color: #1890ff;
+      color: @accent-blue;
       cursor: pointer;
+      transition: all 0.25s;
 
       &:hover {
-        text-decoration: underline;
+        color: lighten(@accent-blue, 15%);
       }
     }
   }
 
   .oauth-section {
-    margin-top: 24px;
+    margin-top: 22px;
 
     .ant-divider {
-      color: rgba(0, 0, 0, 0.45);
-      font-size: 13px;
+      color: @text-muted;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
     .oauth-buttons {
@@ -1478,8 +1551,13 @@ export default {
         align-items: center;
         justify-content: center;
         gap: 8px;
-        height: 40px;
-        font-size: 14px;
+        height: 42px;
+        font-size: 13px;
+        border-radius: 10px;
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid rgba(56, 189, 248, 0.08);
+        color: @text-secondary;
+        transition: all 0.25s;
 
         .oauth-icon {
           width: 18px;
@@ -1489,34 +1567,30 @@ export default {
         .anticon {
           font-size: 18px;
         }
-      }
-
-      .google-btn {
-        border-color: #d9d9d9;
-        color: rgba(0, 0, 0, 0.65);
 
         &:hover {
-          border-color: #4285F4;
-          color: #4285F4;
+          background: rgba(30, 41, 59, 0.5);
+          border-color: rgba(56, 189, 248, 0.2);
+          color: @text-primary;
         }
       }
 
-      .github-btn {
-        border-color: #d9d9d9;
-        color: rgba(0, 0, 0, 0.65);
+      .google-btn:hover {
+        border-color: #4285F4;
+        color: #4285F4;
+      }
 
-        &:hover {
-          border-color: #24292e;
-          color: #24292e;
-        }
+      .github-btn:hover {
+        border-color: #94a3b8;
+        color: #e2e8f0;
       }
     }
   }
 
   .legal-wrap {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px dashed #f0f0f0;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(56, 189, 248, 0.08);
 
     .legal-header {
       display: flex;
@@ -1526,18 +1600,23 @@ export default {
     }
     .legal-title {
       font-size: 13px;
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.75);
+      font-weight: 500;
+      color: @text-primary;
     }
     .legal-toggle {
       font-size: 12px;
-      color: #1890ff;
+      color: @accent-blue;
       cursor: pointer;
+      transition: all 0.25s;
+
+      &:hover {
+        color: lighten(@accent-blue, 15%);
+      }
     }
     .legal-content {
       margin-top: 8px;
       font-size: 12px;
-      color: rgba(0, 0, 0, 0.45);
+      color: @text-secondary;
       line-height: 1.7;
       white-space: pre-wrap;
     }
@@ -1550,7 +1629,7 @@ export default {
     }
 
     .legal-error {
-      color: #ff4d4f;
+      color: @danger;
       font-size: 12px;
       line-height: 1.4;
     }
@@ -1558,43 +1637,204 @@ export default {
 }
 
 .email-display {
-  background: #f5f5f5;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.08);
   padding: 12px 16px;
-  border-radius: 6px;
+  border-radius: 10px;
   margin-bottom: 24px;
   font-size: 14px;
 
   span {
-    color: rgba(0, 0, 0, 0.45);
+    color: @text-muted;
   }
 
   strong {
-    color: rgba(0, 0, 0, 0.85);
+    color: @text-primary;
     margin-left: 8px;
   }
 }
 
 .success-panel {
   padding: 20px 0;
+  text-align: center;
+
+  .anticon {
+    color: @success;
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
 }
 
 .password-requirements {
-  font-size: 13px;
+  font-size: 12px;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(56, 189, 248, 0.06);
 
   > div {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 4px 0;
-    color: #ff4d4f;
+    color: @danger;
+    transition: all 0.3s;
 
     &.valid {
-      color: #52c41a;
+      color: @success;
     }
 
     .anticon {
       font-size: 14px;
     }
   }
+}
+
+@media (max-width: 576px) {
+  .main .auth-card {
+    padding: 28px 20px;
+    border-radius: 12px;
+  }
+}
+</style>
+
+<!-- Global overrides for Ant Design Vue on dark login page -->
+<style lang="less">
+// Dark input wrapper (covers both a-input with prefix and a-input-password)
+#userLayout .auth-form .ant-input-affix-wrapper {
+  background: rgba(2, 6, 23, 0.6) !important;
+  border: 1px solid rgba(56, 189, 248, 0.18) !important;
+  border-radius: 10px !important;
+
+  &:hover {
+    border-color: rgba(56, 189, 248, 0.35) !important;
+  }
+
+  &.ant-input-affix-wrapper-focused {
+    border-color: rgba(56, 189, 248, 0.55) !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.1), 0 0 20px rgba(56, 189, 248, 0.08) !important;
+  }
+
+  .ant-input {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 14px !important;
+  }
+
+  .ant-input::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 13px;
+  }
+}
+
+// Plain a-input without affix wrapper
+#userLayout .auth-form input.ant-input:not(.ant-input-affix-wrapper .ant-input) {
+  background: rgba(2, 6, 23, 0.6) !important;
+  border: 1px solid rgba(56, 189, 248, 0.18) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  border-radius: 10px !important;
+  height: 46px !important;
+  font-size: 14px !important;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+    font-size: 13px;
+  }
+
+  &:hover {
+    border-color: rgba(56, 189, 248, 0.35) !important;
+  }
+
+  &:focus {
+    border-color: rgba(56, 189, 248, 0.55) !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.1), 0 0 20px rgba(56, 189, 248, 0.08) !important;
+  }
+}
+
+#userLayout .auth-form .ant-input-prefix .anticon {
+  color: rgba(56, 189, 248, 0.5) !important;
+}
+
+#userLayout .auth-form .ant-input-password-icon {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+#userLayout .auth-form .ant-input-password-icon:hover {
+  color: #38bdf8 !important;
+}
+
+// Tabs
+#userLayout .ant-tabs-nav .ant-tabs-tab {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#userLayout .ant-tabs-nav .ant-tabs-tab-active {
+  color: #38bdf8 !important;
+}
+#userLayout .ant-tabs-ink-bar {
+  background: #38bdf8 !important;
+}
+
+// Form labels
+#userLayout .ant-form-item-label > label {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 12px;
+}
+
+// Alerts
+#userLayout .ant-alert {
+  background: rgba(248, 113, 113, 0.06) !important;
+  border: 1px solid rgba(248, 113, 113, 0.15) !important;
+  border-radius: 10px !important;
+}
+#userLayout .ant-alert .ant-alert-message,
+#userLayout .ant-alert .ant-alert-icon {
+  color: #f87171 !important;
+}
+
+#userLayout .ant-alert-info {
+  background: rgba(56, 189, 248, 0.05) !important;
+  border: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+#userLayout .ant-alert-info .ant-alert-message,
+#userLayout .ant-alert-info .ant-alert-description,
+#userLayout .ant-alert-info .ant-alert-icon {
+  color: #38bdf8 !important;
+}
+
+// Modal
+#userLayout .ant-modal-content {
+  background: linear-gradient(160deg, #0f172a, #0a0f1e) !important;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 14px !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45) !important;
+}
+#userLayout .ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.08) !important;
+}
+#userLayout .ant-modal-title {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 500;
+}
+#userLayout .ant-modal-body {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#userLayout .ant-modal-close-x {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+#userLayout .ant-modal-close-x:hover {
+  color: #38bdf8 !important;
+}
+
+// Checkbox
+#userLayout .ant-checkbox-wrapper {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#userLayout .ant-checkbox-inner {
+  background: rgba(2, 6, 23, 0.5) !important;
+  border-color: rgba(56, 189, 248, 0.15) !important;
+}
+#userLayout .ant-checkbox-checked .ant-checkbox-inner {
+  background: #38bdf8 !important;
+  border-color: #38bdf8 !important;
 }
 </style>

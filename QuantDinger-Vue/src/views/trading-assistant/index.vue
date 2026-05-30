@@ -1694,7 +1694,7 @@ export default {
     brokerMarketPolicy () {
       return this.$store.getters.brokerMarketPolicy || {}
     },
-    // Brokers whose live execution path is long-only in QuantDinger today
+    // Brokers whose live execution path is long-only in TradeLens today
     // (currently IBKR and Alpaca - their `_execute_*_order` paths reject
     // short signals).  When one of these is selected we lock trade_direction
     // to 'long' in the form so the user never builds a strategy that the

@@ -6,7 +6,7 @@
         <span>{{ $t('agentTokens.title') || 'Agent Tokens' }}</span>
       </h2>
       <p class="page-desc">
-        {{ $t('agentTokens.description') || 'Issue and manage tokens that let external AI agents (Cursor, Claude Code, Codex, MCP, custom bots) call this QuantDinger instance through /api/agent/v1.' }}
+        {{ $t('agentTokens.description') || 'Issue and manage tokens that let external AI agents (Cursor, Claude Code, Codex, MCP, custom bots) call this TradeLens instance through /api/agent/v1.' }}
       </p>
     </div>
 
@@ -469,7 +469,8 @@ export default {
       }
     },
     openQuickstart () {
-      window.open('https://github.com/brokermr810/QuantDinger/blob/main/docs/agent/AGENT_QUICKSTART.md', '_blank')
+      // Social/external doc link hidden
+      // window.open('https://github.com/brokermr810/TradeLens/blob/main/docs/agent/AGENT_QUICKSTART.md', '_blank')
     }
   },
   watch: {

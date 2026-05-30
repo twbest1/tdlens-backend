@@ -442,7 +442,7 @@
                       <a-icon type="info-circle" />
                       <span>
                         {{ $t('profile.notifications.telegramBotTokenHint') || '通过 @BotFather 创建机器人获取 Token' }}
-                        <a href="https://t.me/BotFather" target="_blank" rel="noopener noreferrer">@BotFather</a>
+                        <!-- <a href="https://t.me/BotFather" target="_blank" rel="noopener noreferrer">@BotFather</a> -->
                       </span>
                     </div>
                   </a-form-item>
@@ -760,7 +760,7 @@ export default {
         billing_enabled: false,
         feature_costs: {}
       },
-      rechargeTelegramUrl: 'https://t.me/your_support_bot',
+      rechargeTelegramUrl: '',
       // Notification settings
       notificationSettings: {
         default_channels: ['browser'],

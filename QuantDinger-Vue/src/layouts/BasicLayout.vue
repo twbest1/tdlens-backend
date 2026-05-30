@@ -67,22 +67,22 @@
     <div class="custom-menu-footer" :class="{ 'collapsed': collapsed, 'drawer-open': isMobile && isDrawerOpen, 'drawer-animating': isMobile && isDrawerAnimating }">
       <div v-if="!collapsed" class="menu-footer-content">
         <!-- 联系我们 -->
-        <div class="footer-section">
+        <div class="footer-section" v-if="menuFooterConfig.contact.support_url || menuFooterConfig.contact.feature_request_url">
           <div class="section-title">{{ $t('menu.footer.contactUs') }}</div>
           <div class="section-links">
-            <a :href="menuFooterConfig.contact.support_url" target="_blank">{{ $t('menu.footer.support') }}</a>
-            <span class="separator">|</span>
-            <a :href="menuFooterConfig.contact.feature_request_url" target="_blank">{{ $t('menu.footer.featureRequest') }}</a>
+            <a v-if="menuFooterConfig.contact.support_url" :href="menuFooterConfig.contact.support_url" target="_blank">{{ $t('menu.footer.support') }}</a>
+            <span v-if="menuFooterConfig.contact.support_url && menuFooterConfig.contact.feature_request_url" class="separator">|</span>
+            <a v-if="menuFooterConfig.contact.feature_request_url" :href="menuFooterConfig.contact.feature_request_url" target="_blank">{{ $t('menu.footer.featureRequest') }}</a>
           </div>
         </div>
 
         <!-- 获取支持 -->
-        <div class="footer-section">
+        <div class="footer-section" v-if="menuFooterConfig.contact.email || menuFooterConfig.contact.live_chat_url">
           <div class="section-title">{{ $t('menu.footer.getSupport') }}</div>
           <div class="section-links">
-            <a :href="'mailto:' + menuFooterConfig.contact.email">{{ $t('menu.footer.email') }}</a>
-            <span class="separator">|</span>
-            <a :href="menuFooterConfig.contact.live_chat_url" target="_blank">{{ $t('menu.footer.liveChat') }}</a>
+            <a v-if="menuFooterConfig.contact.email" :href="'mailto:' + menuFooterConfig.contact.email">{{ $t('menu.footer.email') }}</a>
+            <span v-if="menuFooterConfig.contact.email && menuFooterConfig.contact.live_chat_url" class="separator">|</span>
+            <a v-if="menuFooterConfig.contact.live_chat_url" :href="menuFooterConfig.contact.live_chat_url" target="_blank">{{ $t('menu.footer.liveChat') }}</a>
           </div>
         </div>
 
@@ -129,10 +129,8 @@
         <div class="footer-section copyright">
           {{ menuFooterConfig.copyright }}
         </div>
-        <!-- 版本号 -->
-        <div class="footer-section version">
-          V{{ appVersion }}
-        </div>
+        <!-- 版本号已隐藏 -->
+        <!-- <div class="footer-section version">V{{ appVersion }}</div> -->
       </div>
     </div>
   </div>

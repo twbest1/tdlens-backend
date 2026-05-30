@@ -69,9 +69,10 @@
             <div class="ide-guide-bar">
               <a-icon type="book" />
               <span>{{ $t('indicatorIde.devGuideTooltip') }}</span>
-              <a href="https://github.com/brokermr810/QuantDinger/blob/main/docs/STRATEGY_DEV_GUIDE.md" target="_blank" rel="noopener noreferrer" class="ide-guide-link" @click.stop>
+              <!-- Social/external doc link hidden -->
+              <!-- <a href="https://github.com/brokermr810/TradeLens/blob/main/docs/STRATEGY_DEV_GUIDE.md" target="_blank" rel="noopener noreferrer" class="ide-guide-link" @click.stop>
                 {{ $t('indicatorIde.devGuide') }} <a-icon type="arrow-right" />
-              </a>
+              </a> -->
             </div>
             <a-alert
               v-if="showPurchasedMarketHint"
@@ -2332,10 +2333,11 @@ export default {
     },
 
     openStrategyDirectivesDocs () {
-      const url = 'https://github.com/brokermr810/QuantDinger/blob/main/docs/STRATEGY_DEV_GUIDE.md#41-fixed-stop-loss-take-profit-and-entry-sizing-in-indicatorstrategy'
-      try {
-        window.open(url, '_blank', 'noopener')
-      } catch (_) { /* ignore */ }
+      // External doc link hidden
+      // const url = 'https://github.com/brokermr810/TradeLens/blob/main/docs/STRATEGY_DEV_GUIDE.md#41-fixed-stop-loss-take-profit-and-entry-sizing-in-indicatorstrategy'
+      // try {
+      //   window.open(url, '_blank', 'noopener')
+      // } catch (_) { /* ignore */ }
     },
 
     /** 在 CodeMirror 中跳到指定 # @strategy 行；若给定 key 但未找到，则跳到第一条；都没有则置顶。 */
