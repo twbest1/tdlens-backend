@@ -147,10 +147,11 @@ export const asyncRouterMap = [
         component: () => import('@/views/profile'),
         meta: { title: 'menu.myProfile', keepAlive: false, icon: 'user', permission: ['dashboard'] }
       },
-      // 会员/充值
+      // 会员/充值 (hidden — billing feature disabled)
       {
         path: '/billing',
         name: 'Billing',
+        hidden: true,
         component: () => import('@/views/billing'),
         meta: { title: 'menu.billing', keepAlive: false, icon: 'wallet', permission: ['dashboard'] }
       },

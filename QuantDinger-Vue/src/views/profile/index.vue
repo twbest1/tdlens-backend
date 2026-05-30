@@ -49,8 +49,8 @@
       <!-- Right Column: Credits and Referral Cards -->
       <a-col :xs="24" :md="16" class="right-cards-col">
         <a-row :gutter="16" class="right-cards-row">
-          <!-- Credits Card (积分卡片) -->
-          <a-col :xs="24" :md="12">
+          <!-- Credits Card (积分卡片) — hidden, billing feature disabled -->
+          <a-col :xs="24" :md="12" v-if="false">
             <a-card :bordered="false" class="credits-card">
               <div class="credits-header">
                 <h3 class="credits-title">
@@ -345,8 +345,8 @@
               </a-form>
             </a-tab-pane>
 
-            <!-- Credits Log Tab (消费记录) -->
-            <a-tab-pane key="credits" :tab="$t('profile.creditsLog') || '消费记录'">
+            <!-- Credits Log Tab (消费记录) — hidden, billing feature disabled -->
+            <a-tab-pane key="credits" :tab="$t('profile.creditsLog') || '消费记录'" v-if="false">
               <a-table
                 :columns="creditsLogColumns"
                 :dataSource="creditsLog"
@@ -1063,7 +1063,7 @@ export default {
     // Whitelist of tabs we accept from ``?tab=xxx``. Anything else is a no-op
     // so a malformed link can't put the page in a weird state.
     applyTabFromQuery (rawTab) {
-      const allowed = ['basic', 'exchange', 'password', 'credits', 'notifications', 'referrals', 'loginLogs']
+      const allowed = ['basic', 'exchange', 'password', 'notifications', 'referrals', 'loginLogs']
       if (rawTab && allowed.includes(rawTab) && this.activeTab !== rawTab) {
         this.activeTab = rawTab
       }
