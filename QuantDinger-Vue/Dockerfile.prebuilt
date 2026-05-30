@@ -1,9 +1,17 @@
-# Local / CI fast path: reuse an existing `pnpm build` output in ./dist
-# without pulling node:18-alpine. Usage:
-#   pnpm run build
-#   docker build -f Dockerfile.prebuilt -t tradelens-frontend:local .
+# TradeLens Frontend — prebuilt static bundle
+#
+# Use this Dockerfile when you have ALREADY built the frontend locally
+# (e.g., pnpm build on your dev machine) and want to package the dist/
+# folder into an nginx image on the server WITHOUT running Node/pnpm.
+#
+# Build command (run on server, after uploading dist/):
+#   docker build -f Dockerfile.prebuilt -t tradelens-frontend .
+#
+# Or simply use docker-compose.prebuilt.yml which mounts dist/ as a volume
+# and skips image building entirely — that is faster for most cases.
 
 ARG NGINX_IMAGE=nginx:1.25-alpine
+
 FROM ${NGINX_IMAGE}
 
 RUN apk add --no-cache curl
